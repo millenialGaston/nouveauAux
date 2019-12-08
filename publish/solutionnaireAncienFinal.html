@@ -1,0 +1,499 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-12-08 Sun 06:50 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>solutionnaire final A14</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="frederic boileau" />
+<link rel="stylesheet" type="text/css" href="blog.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2019 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">solutionnaire final A14</h1>
+
+
+<div id="outline-container-org4a6f9a9" class="outline-2">
+<h2 id="org4a6f9a9">documents</h2>
+<div class="outline-text-2" id="text-org4a6f9a9">
+<dl class="org-dl">
+<dt><a href="ift1016_official_docs/A14-IFT1015-final.pdf">final a14</a></dt><dd>pdf</dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-org2e9eac6" class="outline-2">
+<h2 id="org2e9eac6">echauffement (14 points)</h2>
+<div class="outline-text-2" id="text-org2e9eac6">
+</div>
+
+<div id="outline-container-orgae187ac" class="outline-3">
+<h3 id="orgae187ac">a</h3>
+<div class="outline-text-3" id="text-orgae187ac">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">a</span>=<span style="color: #B58DAE; font-weight: bold;">1</span>,<span style="color: #dac6d6;">b</span>=<span style="color: #B58DAE; font-weight: bold;">3</span>;
+console.log<span style="color: #80A0C2;">(</span>a+b+<span style="color: #A2BF8A;">"+"</span>+b+a ,<span style="color: #A2BF8A;">"="</span>,<span style="color: #B58DAE; font-weight: bold;">2</span>*<span style="color: #B58DAE;">(</span>a+b<span style="color: #B58DAE;">)</span><span style="color: #80A0C2;">)</span>
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">4+31 = 8</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Ici il faut faire attention à deux choses: <i>les règles de préscéance des
+opérateurs</i>, ainsi que les cast implicite fait par javascript lorsqu&rsquo;un
+opérateur agit sur deux éléments de différent type, e.g. <code>2.0 + "a"</code>
+</p>
+
+<p>
+Lorsque nous avons une expression un peu longue et farfelue l&rsquo;important est de
+déterminer avant tout la préséance des opérateurs si elle n&rsquo;est pas apparente
+immédiatement.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #80A0C2;">(</span>a + b + <span style="color: #A2BF8A;">"+"</span> + b + a, <span style="color: #A2BF8A;">"="</span>, <span style="color: #B58DAE; font-weight: bold;">2</span>*<span style="color: #B58DAE;">(</span>a + b<span style="color: #B58DAE;">)</span><span style="color: #80A0C2;">)</span>
+<span style="color: #80A0C2;">(</span><span style="color: #B58DAE;">(</span><span style="color: #A2BF8A;">(</span><span style="color: #80A0C2;">(</span><span style="color: #B58DAE;">(</span>a<span style="color: #B58DAE;">)</span>+ b<span style="color: #80A0C2;">)</span>+ <span style="color: #A2BF8A;">"+"</span><span style="color: #A2BF8A;">)</span> + b<span style="color: #B58DAE;">)</span> + a<span style="color: #80A0C2;">)</span>
+</pre>
+</div>
+
+<p>
+<code>a</code> et <code>b</code> seront donc additionnés comme des nombres mais par la suite le
+résultat de cette addition sera convertit en string par js pour être
+<b>concaténné</b> avec le caractère plus.
+</p>
+
+<p>
+Le résultat intermédiaire additionné au second b (l&rsquo;avant dernier terme) est
+donc une chaîne de caractère. Le 3 est donc concatenné au 1 ce qui donne
+l&rsquo;impression de l&rsquo;équation absurde.
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org26be714" class="outline-3">
+<h3 id="org26be714">b</h3>
+<div class="outline-text-3" id="text-org26be714">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">a</span>=<span style="color: #B58DAE; font-weight: bold;">1</span>,<span style="color: #dac6d6;">b</span>=<span style="color: #B58DAE; font-weight: bold;">3</span>;
+console.log<span style="color: #80A0C2;">(</span>a/b<span style="color: #80A0C2;">)</span>;
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">0.3333333333333333</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+La deuxième ligne du programme demande à l&rsquo;ordinateur
+d&rsquo;imprimer le ratio de deux nombres entiers ce qui donne
+un nombre à virgule à l&rsquo;écran; on constate donc que le nombre
+`rationel` a/b est converti en nombre à virgule.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfe1c740" class="outline-3">
+<h3 id="orgfe1c740">c</h3>
+<div class="outline-text-3" id="text-orgfe1c740">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">a</span>=<span style="color: #B58DAE; font-weight: bold;">1</span>,<span style="color: #dac6d6;">b</span>=<span style="color: #B58DAE; font-weight: bold;">3</span>;
+console.log<span style="color: #80A0C2;">(</span>a-b+<span style="color: #B58DAE; font-weight: bold;">1</span>-b*a<span style="color: #80A0C2;">)</span>;
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">-4</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Encore une fois on est mieux de se mettre des parenthèses pour se convaincre de
+la préséance des opérateurs.
+</p>
+
+
+<p>
+La multiplication et la division <i>brisent</i> en quelque sorte les parenthèses qui
+s&rsquo;associent à gauche en définissant l&rsquo;ordre d&rsquo;application des opérations.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">a</span> = <span style="color: #B58DAE; font-weight: bold;">1</span>; b = <span style="color: #B58DAE; font-weight: bold;">3</span>;
+console.log<span style="color: #80A0C2;">(</span><span style="color: #B58DAE;">(</span><span style="color: #A2BF8A;">(</span><span style="color: #80A0C2;">(</span>a<span style="color: #80A0C2;">)</span> - b<span style="color: #A2BF8A;">)</span> + <span style="color: #B58DAE; font-weight: bold;">1</span><span style="color: #B58DAE;">)</span> -<span style="color: #B58DAE;">(</span>b*<span style="color: #A2BF8A;">(</span>a<span style="color: #A2BF8A;">)</span><span style="color: #B58DAE;">)</span><span style="color: #80A0C2;">)</span>
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">-4</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+et <b>non</b>! :
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">a</span> = <span style="color: #B58DAE; font-weight: bold;">1</span>; b = <span style="color: #B58DAE; font-weight: bold;">3</span>;
+console.log<span style="color: #80A0C2;">(</span><span style="color: #B58DAE;">(</span><span style="color: #A2BF8A;">(</span><span style="color: #80A0C2;">(</span><span style="color: #B58DAE;">(</span>a<span style="color: #B58DAE;">)</span> - b<span style="color: #80A0C2;">)</span> + <span style="color: #B58DAE; font-weight: bold;">1</span><span style="color: #A2BF8A;">)</span> - b<span style="color: #B58DAE;">)</span>*a<span style="color: #80A0C2;">)</span>
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-right" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-right">-4</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Ah c&rsquo;est un cas spécial parce que a est égal à un et donc
+sa multiplication ne change rien &#x2026;
+</p>
+
+<p>
+¯\<sub>(ツ)</sub>_/¯
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8da4e10" class="outline-3">
+<h3 id="org8da4e10">d</h3>
+<div class="outline-text-3" id="text-org8da4e10">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">a</span>=<span style="color: #B58DAE; font-weight: bold;">1</span>,<span style="color: #dac6d6;">b</span>=<span style="color: #B58DAE; font-weight: bold;">3</span>;
+console.log<span style="color: #80A0C2;">(</span><span style="color: #B58DAE;">(</span>Math.random<span style="color: #A2BF8A;">()</span> === <span style="color: #B58DAE; font-weight: bold;">1</span><span style="color: #B58DAE;">)</span>? <span style="color: #B58DAE;">true</span>:<span style="color: #B58DAE;">false</span><span style="color: #80A0C2;">)</span>;
+</pre>
+</div>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">false</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Premièrement les variables a et b n&rsquo;ont aucun rapport avec l&rsquo;appel à la fonction
+<code>log</code>. Il faut ici se rappeler de la différence entre <code>x \== y</code> et <code>x \=== y</code> ;
+</p>
+
+<p>
+le premier opérateur (<code>==</code>) teste pour <i>l&rsquo;équivalence</i> alors que le deuxième
+opérateur (<code>===</code>) teste pour l&rsquo;égalité.
+</p>
+
+<p>
+par exemple:
+</p>
+<div class="org-src-container">
+<pre class="src src-js">console.log<span style="color: #80A0C2;">(</span><span style="color: #A2BF8A;">"2"</span> == <span style="color: #B58DAE; font-weight: bold;">2</span><span style="color: #80A0C2;">)</span>;
+console.log<span style="color: #80A0C2;">(</span><span style="color: #A2BF8A;">"2"</span> === <span style="color: #B58DAE; font-weight: bold;">2</span><span style="color: #80A0C2;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+true
+false
+undefined
+</pre>
+
+
+
+<dl class="org-dl">
+<dt>note</dt><dd>il faudrait se rappeler que</dd>
+</dl>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #B58DAE; font-weight: bold;">2</span> + <span style="color: #A2BF8A;">"2"</span> === <span style="color: #A2BF8A;">"2"</span> + <span style="color: #B58DAE; font-weight: bold;">2</span> === <span style="color: #A2BF8A;">"22"</span>
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">undefined</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+je vois mal comment deviner
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgd43a764" class="outline-3">
+<h3 id="orgd43a764">e</h3>
+<div class="outline-text-3" id="text-orgd43a764">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">a</span>=<span style="color: #B58DAE; font-weight: bold;">1</span>,<span style="color: #dac6d6;">b</span>=<span style="color: #B58DAE; font-weight: bold;">3</span>;
+console.log<span style="color: #80A0C2;">(</span><span style="color: #B58DAE;">[</span>a,<span style="color: #A2BF8A;">"b"</span>,b<span style="color: #B58DAE;">]</span><span style="color: #80A0C2;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+[ 1, 'b', 3 ]
+undefined
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org07eabd8" class="outline-3">
+<h3 id="org07eabd8">f</h3>
+<div class="outline-text-3" id="text-org07eabd8">
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">t</span> = <span style="color: #80A0C2;">[</span><span style="color: #B58DAE; font-weight: bold;">1</span>,<span style="color: #B58DAE; font-weight: bold;">2</span>,<span style="color: #B58DAE; font-weight: bold;">3</span><span style="color: #80A0C2;">]</span>;
+<span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">r</span> = <span style="color: #80A0C2;">[</span><span style="color: #B58DAE; font-weight: bold;">5</span>,<span style="color: #B58DAE; font-weight: bold;">6</span>,<span style="color: #B58DAE; font-weight: bold;">7</span><span style="color: #80A0C2;">]</span>;
+<span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">quiz</span> = <span style="color: #80A0C2;">function</span><span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">r</span>,<span style="color: #dac6d6;">t</span><span style="color: #80A0C2;">)</span> <span style="color: #80A0C2;">{</span>
+    r = t;
+    t<span style="color: #B58DAE;">[</span><span style="color: #B58DAE; font-weight: bold;">1</span><span style="color: #B58DAE;">]</span> = r<span style="color: #B58DAE;">[</span><span style="color: #B58DAE; font-weight: bold;">2</span><span style="color: #B58DAE;">]</span>;
+    console.log<span style="color: #B58DAE;">(</span>t<span style="color: #B58DAE;">)</span>;
+    <span style="color: #80A0C2;">return</span> r;
+<span style="color: #80A0C2;">}</span>;
+
+<span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">t</span> = <span style="color: #80A0C2;">[</span><span style="color: #B58DAE; font-weight: bold;">1</span>,<span style="color: #B58DAE; font-weight: bold;">2</span>,<span style="color: #B58DAE; font-weight: bold;">3</span><span style="color: #80A0C2;">]</span>;
+<span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">r</span> = <span style="color: #80A0C2;">[</span><span style="color: #A2BF8A;">"a"</span>, <span style="color: #A2BF8A;">"b"</span>, <span style="color: #A2BF8A;">"c"</span><span style="color: #80A0C2;">]</span>;
+<span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">s</span> = quiz<span style="color: #80A0C2;">(</span>t,r<span style="color: #80A0C2;">)</span>;
+console.log<span style="color: #80A0C2;">(</span>quiz<span style="color: #B58DAE;">(</span>f,q<span style="color: #B58DAE;">)</span><span style="color: #80A0C2;">)</span>;
+</pre>
+</div>
+
+<p>
+Un nombre de points importants:
+</p>
+
+<ol class="org-ol">
+<li><p>
+les noms des <i>paramètres</i> des fonctions  sont <b>protégés</b> du reste du
+programme. par exemple dans `var s = quiz(t,r)` les variables t et r
+sont associées à leurs paramètres respectifs <b>uniquement en fonction
+de leur position dans l&rsquo;appel de la fonction</b>.
+</p>
+
+<p>
+Ainsi pour bien lire la ligne <code>var s = quiz(t,r)</code> il faut surtout
+se rappeler que <code>t</code> n&rsquo;était qu&rsquo;une variable pour le tableau <code>[1,2,3]</code>.
+La fonction va donc <i>binder</i> ou assigner la <b>valeur</b> <code>[1,2,3]</code> , au
+paramètre <code>r</code>, et l&rsquo;autre à l&rsquo;autre &#x2026; , pour ensuite exécuter la fonction
+avec ces nouvelles valeurs concrètes en place des paramètres.
+</p></li>
+
+<li><p>
+La ligne <code>r = t;</code> ne fait pas ce que la majorité de vous pensez. Puisque
+<code>t</code> est un tableau c&rsquo;est un conteneur. Lorsque l&rsquo;on copie un conteneur
+on peut soit copier uniquement le conteneur, ou alors copier le conteneur
+<b>et</b> faire une copie de chaque élément qui se trouvait dans <code>t</code>. Pour bien
+sur par la suite les diposés dans le nouveau conteneur.
+</p>
+
+<p>
+<b>Ainsi, après le statement <code>r = t;</code> <code>r</code> est maintenant un nouveau conteneur
+mais qui contient les mêmes éléments que <code>t</code> !</b> Modifier un élément qui est
+dans <code>r</code> va donc modifier son homologue dans <code>t</code>.
+</p></li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">t</span> = <span style="color: #80A0C2;">[</span><span style="color: #B58DAE; font-weight: bold;">1</span>,<span style="color: #B58DAE; font-weight: bold;">2</span>,<span style="color: #B58DAE; font-weight: bold;">3</span><span style="color: #80A0C2;">]</span>;
+<span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">r</span> = <span style="color: #80A0C2;">[</span><span style="color: #A2BF8A;">"a"</span>,<span style="color: #A2BF8A;">"b"</span>,<span style="color: #A2BF8A;">"c"</span><span style="color: #80A0C2;">]</span>;
+<span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">quiz</span> = <span style="color: #80A0C2;">function</span><span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">r</span>,<span style="color: #dac6d6;">t</span><span style="color: #80A0C2;">)</span> <span style="color: #80A0C2;">{</span>
+    r = t;
+    t<span style="color: #B58DAE;">[</span><span style="color: #B58DAE; font-weight: bold;">1</span><span style="color: #B58DAE;">]</span> = r<span style="color: #B58DAE;">[</span><span style="color: #B58DAE; font-weight: bold;">2</span><span style="color: #B58DAE;">]</span>;
+    <span style="color: #80A0C2;">return</span> r;
+<span style="color: #80A0C2;">}</span>;
+
+<span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">s</span> = quiz<span style="color: #80A0C2;">(</span>t,r<span style="color: #80A0C2;">)</span>;
+
+console.log<span style="color: #80A0C2;">(</span>t<span style="color: #80A0C2;">)</span>;
+console.log<span style="color: #80A0C2;">(</span>r<span style="color: #80A0C2;">)</span>;
+s<span style="color: #80A0C2;">[</span><span style="color: #B58DAE; font-weight: bold;">1</span><span style="color: #80A0C2;">]</span> = <span style="color: #B58DAE; font-weight: bold;">5</span>;
+console.log<span style="color: #80A0C2;">(</span><span style="color: #A2BF8A;">"t="</span>,t,<span style="color: #A2BF8A;">"r="</span>,r,<span style="color: #A2BF8A;">"s="</span>,s<span style="color: #80A0C2;">)</span>;
+</pre>
+</div>
+
+<pre class="example">
+[ 1, 2, 3 ]
+[ 'a', 'c', 'c' ]
+t= [ 1, 2, 3 ] r= [ 'a', 5, 'c' ] s= [ 'a', 5, 'c' ]
+undefined
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orga386269" class="outline-3">
+<h3 id="orga386269">-Boucles simples (a) (6 points)</h3>
+<div class="outline-text-3" id="text-orga386269">
+<p>
+Écrire une fonction loop qui tire aléatoirement des nombres entiers entre O et
+10 0 (inclus).
+Les tirages s&rsquo;arrêtent lorsque la valeur 0 est tirée;
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">gen</span> = <span style="color: #80A0C2;">function</span><span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">range</span><span style="color: #80A0C2;">){</span><span style="color: #80A0C2;">return</span> Math.floor<span style="color: #B58DAE;">(</span><span style="color: #A2BF8A;">(</span>range*Math.random<span style="color: #80A0C2;">()</span><span style="color: #A2BF8A;">)</span><span style="color: #B58DAE;">)</span>;<span style="color: #80A0C2;">}</span>;
+<span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">x</span> = gen<span style="color: #80A0C2;">(</span><span style="color: #B58DAE; font-weight: bold;">10</span><span style="color: #80A0C2;">)</span>;
+<span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">tableau</span> = <span style="color: #80A0C2;">[</span>x<span style="color: #80A0C2;">]</span>;
+<span style="color: #80A0C2;">while</span> <span style="color: #80A0C2;">(</span>x != <span style="color: #B58DAE; font-weight: bold;">0</span><span style="color: #80A0C2;">){</span>
+    x = gen<span style="color: #B58DAE;">(</span><span style="color: #B58DAE; font-weight: bold;">10</span><span style="color: #B58DAE;">)</span>;
+    tableau.push<span style="color: #B58DAE;">(</span>x<span style="color: #B58DAE;">)</span>;
+<span style="color: #80A0C2;">}</span>;
+console.log<span style="color: #80A0C2;">(</span>tableau<span style="color: #80A0C2;">)</span>;
+<span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">stats</span> <span style="color: #80A0C2;">function</span><span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">tableau</span><span style="color: #80A0C2;">)</span> <span style="color: #80A0C2;">{</span>
+   <span style="color: #6f7787;">// </span><span style="color: #6f7787;">le nombre de tirages non nuls r&#233;alis&#233;s,</span>
+
+
+<span style="color: #80A0C2;">}</span>
+</pre>
+</div>
+
+<p>
+et la
+fonction affiche selon lexemple donné ci-après:
+• le nombre de tirages non nuls réalisés,
+</p>
+
+<p>
+• le nombre d&rsquo;entiers pairs tirés (la valeur 0 n&rsquo;est pas comptée) et
+le pourcentage que cela représente par rapport au nombre total de tirages non
+nuls,
+</p>
+
+
+<p>
+• la moyenne des entiers impairs. Pour les tirages successifs: 1 5 3 69 56 0,
+l&rsquo;affichage suivant doit être produit: 5 tirages &gt;O, nbpairs: 1 (20.00%) moy
+pairs: 56.00 moy impairs: 26.80
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js">
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">undefined</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: frederic boileau</p>
+<p class="date">Created: 2019-12-08 Sun 06:50</p>
+</div>
+</body>
+</html>

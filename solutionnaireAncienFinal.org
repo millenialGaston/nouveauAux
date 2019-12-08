@@ -12,7 +12,7 @@
 
 * echauffement (14 points)
 :PROPERTIES:
-:header-args: :results table
+:header-args: :results table :exports both
 :END:
 
 ** a
