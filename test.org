@@ -4,7 +4,6 @@
 #+STARTUP:  content
 
 
-- [[wiki:index][Index]]
 
 - Related:
 

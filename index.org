@@ -1,9 +1,9 @@
-#+title: index
+#+title: Révision finale pour IFT1016B
 #+author: frederic boileau
 #+email: frederic.boileau@protonmail.com
-#+html_head: <link rel="stylesheet" type="text/css" href="https://gongzhitaao.org/orgcss/org.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="blog.css" />
+#+OPTIONS: toc:nil num:nil html-style:nil
 #+startup:  inlineimages lognoteclock-out hideblocks
-#+hugo_base_dir: .
 
 
 * liens utiles
@@ -20,10 +20,7 @@
 
 - Boucles :: in progress
 
-- wiki:test
-
 - tableaux :: in progress
-
 
 * publish settings :noexport:
 ** wiki
@@ -37,7 +34,7 @@
 ** project alist
 #+BEGIN_SRC emacs-lisp
 (setq org-publish-project-alist
-      '(("demos"
+      '(("demos-org"
          :base-directory "~/nouveauAux"
          :base-extension "org"
          :publishing-directory "~/nouveauAux/publish"
@@ -58,6 +55,6 @@
 #+END_SRC
 
 #+RESULTS:
-| demos        | :base-directory | ~/nouveauAux             | :base-extension | org  | :publishing-directory | ~/nouveauAux/publish | :recursive | t    | :exclude | */ignore/* | :publishing-function | org-html-publish-to-html | :headline-levels      |                           4 | :auto-preamble | t |                      |                        |
+| demos-org    | :base-directory | ~/nouveauAux             | :base-extension | org  | :publishing-directory | ~/nouveauAux/publish | :recursive | t    | :exclude | */ignore/* | :publishing-function | org-html-publish-to-html | :headline-levels      |                           4 | :auto-preamble | t |                      |                        |
 | demos-static | :base-directory | ~/nouveauAux/static      | :base-extension | css\ | js\                   | png\                 | jpg\       | gif\ | pdf\     | mp3\       | ogg\                 | swf                      | :publishing-directory | ~/nouveauAux/publish/static | :recursive     | t | :publishing-function | org-publish-attachment |
 | demos        | :components     | (demos-org demos-static) |                 |      |                       |                      |            |      |          |            |                      |                          |                       |                             |                |   |                      |                        |

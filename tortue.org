@@ -1,8 +1,12 @@
 #+TITLE: tortue
 #+author: frederic boileau
 #+email: frederic.boileau@protonmail.com
-#+html_head: <link rel="stylesheet" type="text/css" href="https://gongzhitaao.org/orgcss/org.css"/>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="blog.css" />
+#+OPTIONS: toc:nil num:nil html-style:nil
 #+startup:  inlineimages lognoteclock-out hideblocks
+
+
+ - [[file:index.org][index]]
 
 * tortue
 ** tortue generale
