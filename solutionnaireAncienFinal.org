@@ -50,10 +50,6 @@ l'impression de l'équation absurde.
 
 ** b
 
-La deuxième ligne du programme demande à l'ordinateur
-d'imprimer le ratio de deux nombres entiers ce qui donne
-un nombre à virgule à l'écran; on constate donc que le nombre
-`rationel` a/b est converti en nombre à virgule.
 
 #+begin_src js
 let a=1,b=3;
@@ -63,31 +59,47 @@ console.log(a/b);
 #+RESULTS:
 | 0.3333333333333333 |
 
+La deuxième ligne du programme demande à l'ordinateur
+d'imprimer le ratio de deux nombres entiers ce qui donne
+un nombre à virgule à l'écran; on constate donc que le nombre
+`rationel` a/b est converti en nombre à virgule.
 
 ** c
 
-Maintenant toute l'arnaque est dans la préscéance des
-opérateurs.
 #+begin_src js
 let a=1,b=3;
 console.log(a-b+1-b*a);
 #+end_src
 
-#+RESULTS:
-| -4 |
+Encore une fois on est mieux de se mettre des parenthèses pour se convaincre de
+la préséance des opérateurs.
 
-La multiplication et la division /brisent/ en quelque sorte
-les parenthèses qui s'associent à gauche en définissant l'ordre
-d'application des opérations.
+
+La multiplication et la division /brisent/ en quelque sorte les parenthèses qui
+s'associent à gauche en définissant l'ordre d'application des opérations.
+
 #+BEGIN_SRC js
-let a=1;b=3;
-console.log((((a)-b)+1) -b*a)
+let a = 1; b = 3;
+console.log((((a) - b) + 1) -(b*(a)))
 #+END_SRC
 
 #+RESULTS:
 | -4 |
 
+et *non*! :
 
+#+BEGIN_SRC js
+let a = 1; b = 3;
+console.log(((((a) - b) + 1) - b)*a)
+#+END_SRC
+
+#+RESULTS:
+| -4 |
+
+Ah c'est un cas spécial parce que a est égal à un et donc
+sa multiplication ne change rien ...
+
+¯\_(ツ)_/¯
 
 ** d
 
@@ -95,10 +107,34 @@ console.log((((a)-b)+1) -b*a)
 let a=1,b=3;
 console.log((Math.random() === 1)? true:false);
 #+end_src
-
 #+RESULTS:
 : false
-: undefined
+
+Premièrement les variables a et b n'ont aucun rapport avec l'appel à la fonction
+=log=. Il faut ici se rappeler de la différence entre ~x \== y~ et ~x \=== y~ ;
+
+le premier opérateur (~==~) teste pour /l'équivalence/ alors que le deuxième
+opérateur (~===~) teste pour l'égalité.
+
+par exemple:
+#+BEGIN_SRC js :results verbatim
+console.log("2" == 2);
+console.log("2" === 2);
+#+END_SRC
+
+#+RESULTS:
+: true
+: false
+
+
+- note :: il faudrait se rappeler que
+#+BEGIN_SRC js
+2 + "2" === "2" + 2 === "22"
+#+END_SRC
+je vois mal comment deviner
+
+
+** e
 
 #+begin_src js :results verbatim
 let a=1,b=3;
@@ -107,7 +143,7 @@ console.log([a,"b",b]);
 
 #+RESULTS:
 : [ 1, 'b', 3 ]
-: undefined
+
 ** que produit ce code
 #+begin_src js :results verbatim
 var t = [1,2,3];
