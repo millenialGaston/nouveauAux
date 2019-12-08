@@ -4,7 +4,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-12-08 Sun 01:35 -->
+<!-- 2019-12-08 Sun 03:17 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>tortue</title>
@@ -249,19 +249,19 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga371066">1. tortue</a>
+<li><a href="#org81a784f">1. tortue</a>
 <ul>
-<li><a href="#org92b23b2">1.1. tortue generale</a></li>
-<li><a href="#org22e40df">1.2. api de base</a></li>
-<li><a href="#orgd6ac5b9">1.3. examples</a>
+<li><a href="#org4f157f1">1.1. tortue generale</a></li>
+<li><a href="#org765cae4">1.2. api de base</a></li>
+<li><a href="#orgf60089f">1.3. examples</a>
 <ul>
-<li><a href="#orgecf942b">1.3.1. polygones</a></li>
-<li><a href="#orgc22aa06">1.3.2. centre</a></li>
-<li><a href="#org4bbd31e">1.3.3. etoile</a></li>
-<li><a href="#org2d97fbb">1.3.4. spirales</a>
+<li><a href="#orgb72273c">1.3.1. polygones</a></li>
+<li><a href="#orgaa8601b">1.3.2. centre</a></li>
+<li><a href="#org0b9c7d7">1.3.3. etoile</a></li>
+<li><a href="#orgdbd5d32">1.3.4. spirales</a>
 <ul>
-<li><a href="#orga5ed7ca">1.3.4.1. carre</a></li>
-<li><a href="#orgd4dc598">1.3.4.2. ronde</a></li>
+<li><a href="#org5d0aa0a">1.3.4.1. carre</a></li>
+<li><a href="#org7e9aec8">1.3.4.2. ronde</a></li>
 </ul>
 </li>
 </ul>
@@ -272,15 +272,15 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orga371066" class="outline-2">
-<h2 id="orga371066"><span class="section-number-2">1</span> tortue</h2>
+<div id="outline-container-org81a784f" class="outline-2">
+<h2 id="org81a784f"><span class="section-number-2">1</span> tortue</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org92b23b2" class="outline-3">
-<h3 id="org92b23b2"><span class="section-number-3">1.1</span> tortue generale</h3>
+<div id="outline-container-org4f157f1" class="outline-3">
+<h3 id="org4f157f1"><span class="section-number-3">1.1</span> tortue generale</h3>
 </div>
-<div id="outline-container-org22e40df" class="outline-3">
-<h3 id="org22e40df"><span class="section-number-3">1.2</span> api de base</h3>
+<div id="outline-container-org765cae4" class="outline-3">
+<h3 id="org765cae4"><span class="section-number-3">1.2</span> api de base</h3>
 <div class="outline-text-3" id="text-1-2">
 <ul class="org-ul">
 <li>grille avec lignes au 10 pixels.</li>
@@ -299,15 +299,15 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-<div id="outline-container-orgd6ac5b9" class="outline-3">
-<h3 id="orgd6ac5b9"><span class="section-number-3">1.3</span> examples</h3>
+<div id="outline-container-orgf60089f" class="outline-3">
+<h3 id="orgf60089f"><span class="section-number-3">1.3</span> examples</h3>
 <div class="outline-text-3" id="text-1-3">
 </div>
-<div id="outline-container-orgecf942b" class="outline-4">
-<h4 id="orgecf942b"><span class="section-number-4">1.3.1</span> polygones</h4>
+<div id="outline-container-orgb72273c" class="outline-4">
+<h4 id="orgb72273c"><span class="section-number-4">1.3.1</span> polygones</h4>
 <div class="outline-text-4" id="text-1-3-1">
 <div class="org-src-container">
-<pre class="src src-js" id="orga3882e1"><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">carre</span> = <span style="color: #80A0C2;">function</span> <span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">largeur</span><span style="color: #80A0C2;">)</span> <span style="color: #80A0C2;">{</span>
+<pre class="src src-js" id="org54a9fc0"><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">carre</span> = <span style="color: #80A0C2;">function</span> <span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">largeur</span><span style="color: #80A0C2;">)</span> <span style="color: #80A0C2;">{</span>
     <span style="color: #80A0C2;">for</span> <span style="color: #B58DAE;">(</span><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">i</span>=<span style="color: #B58DAE; font-weight: bold;">1</span>; i&lt;=<span style="color: #B58DAE; font-weight: bold;">4</span>; i++<span style="color: #B58DAE;">)</span> <span style="color: #B58DAE;">{</span>
         fd<span style="color: #A2BF8A;">(</span>largeur<span style="color: #A2BF8A;">)</span>;
         rt<span style="color: #A2BF8A;">(</span><span style="color: #B58DAE; font-weight: bold;">90</span><span style="color: #A2BF8A;">)</span>;
@@ -325,7 +325,7 @@ remarquer la symmetrie utilisee dans l&rsquo;éxo suivant
 </blockquote>
 
 <div class="org-src-container">
-<pre class="src src-js" id="org84cd833"><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">rectangle</span> = <span style="color: #80A0C2;">function</span> <span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">largeur</span>, <span style="color: #dac6d6;">hauteur</span><span style="color: #80A0C2;">)</span> <span style="color: #80A0C2;">{</span>
+<pre class="src src-js" id="org5b3ad81"><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">rectangle</span> = <span style="color: #80A0C2;">function</span> <span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">largeur</span>, <span style="color: #dac6d6;">hauteur</span><span style="color: #80A0C2;">)</span> <span style="color: #80A0C2;">{</span>
     <span style="color: #80A0C2;">for</span> <span style="color: #B58DAE;">(</span><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">i</span>=<span style="color: #B58DAE; font-weight: bold;">1</span>; i&lt;=<span style="color: #B58DAE; font-weight: bold;">2</span>; i++<span style="color: #B58DAE;">)</span> <span style="color: #B58DAE;">{</span>
         fd<span style="color: #A2BF8A;">(</span>hauteur<span style="color: #A2BF8A;">)</span>;
         rt<span style="color: #A2BF8A;">(</span><span style="color: #B58DAE; font-weight: bold;">90</span><span style="color: #A2BF8A;">)</span>;
@@ -346,7 +346,7 @@ carre<span style="color: #80A0C2;">(</span><span style="color: #B58DAE; font-wei
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-js" id="orge61aa1f"><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">polygoneReg</span> = <span style="color: #80A0C2;">function</span> <span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">cote</span>, <span style="color: #dac6d6;">nbCotes</span><span style="color: #80A0C2;">)</span> <span style="color: #80A0C2;">{</span>
+<pre class="src src-js" id="org9395ff2"><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">polygoneReg</span> = <span style="color: #80A0C2;">function</span> <span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">cote</span>, <span style="color: #dac6d6;">nbCotes</span><span style="color: #80A0C2;">)</span> <span style="color: #80A0C2;">{</span>
     <span style="color: #80A0C2;">for</span> <span style="color: #B58DAE;">(</span><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">i</span>=<span style="color: #B58DAE; font-weight: bold;">1</span>; i&lt;=nbCotes; i++<span style="color: #B58DAE;">)</span> <span style="color: #B58DAE;">{</span>
         fd<span style="color: #A2BF8A;">(</span>cote<span style="color: #A2BF8A;">)</span>;
         rt<span style="color: #A2BF8A;">(</span><span style="color: #B58DAE; font-weight: bold;">360</span>/nbCotes<span style="color: #A2BF8A;">)</span>;
@@ -363,11 +363,11 @@ polygoneReg<span style="color: #80A0C2;">(</span><span style="color: #B58DAE; fo
 </div>
 </div>
 
-<div id="outline-container-orgc22aa06" class="outline-4">
-<h4 id="orgc22aa06"><span class="section-number-4">1.3.2</span> centre</h4>
+<div id="outline-container-orgaa8601b" class="outline-4">
+<h4 id="orgaa8601b"><span class="section-number-4">1.3.2</span> centre</h4>
 <div class="outline-text-4" id="text-1-3-2">
 <div class="org-src-container">
-<pre class="src src-js" id="orgc0c3a43"><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">polygoneReg</span> = <span style="color: #80A0C2;">function</span> <span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">cote</span>, <span style="color: #dac6d6;">nbCotes</span><span style="color: #80A0C2;">)</span> <span style="color: #80A0C2;">{</span>
+<pre class="src src-js" id="orga45379e"><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">polygoneReg</span> = <span style="color: #80A0C2;">function</span> <span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">cote</span>, <span style="color: #dac6d6;">nbCotes</span><span style="color: #80A0C2;">)</span> <span style="color: #80A0C2;">{</span>
     <span style="color: #80A0C2;">for</span> <span style="color: #B58DAE;">(</span><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">i</span>=<span style="color: #B58DAE; font-weight: bold;">1</span>; i&lt;=nbCotes; i++<span style="color: #B58DAE;">)</span> <span style="color: #B58DAE;">{</span>
         fd<span style="color: #A2BF8A;">(</span>cote<span style="color: #A2BF8A;">)</span>;
         rt<span style="color: #A2BF8A;">(</span><span style="color: #B58DAE; font-weight: bold;">360</span>/nbCotes<span style="color: #A2BF8A;">)</span>;
@@ -414,8 +414,8 @@ au segment de droite.
 </div>
 </div>
 
-<div id="outline-container-org4bbd31e" class="outline-4">
-<h4 id="org4bbd31e"><span class="section-number-4">1.3.3</span> etoile</h4>
+<div id="outline-container-org0b9c7d7" class="outline-4">
+<h4 id="org0b9c7d7"><span class="section-number-4">1.3.3</span> etoile</h4>
 <div class="outline-text-4" id="text-1-3-3">
 <dl class="org-dl">
 <dt>note</dt><dd>exemple de code ou ne pas connaitre la precesceance des
@@ -435,15 +435,15 @@ polygoneRegPointu<span style="color: #80A0C2;">(</span><span style="color: #B58D
 </div>
 </div>
 
-<div id="outline-container-org2d97fbb" class="outline-4">
-<h4 id="org2d97fbb"><span class="section-number-4">1.3.4</span> spirales</h4>
+<div id="outline-container-orgdbd5d32" class="outline-4">
+<h4 id="orgdbd5d32"><span class="section-number-4">1.3.4</span> spirales</h4>
 <div class="outline-text-4" id="text-1-3-4">
 </div>
-<div id="outline-container-orga5ed7ca" class="outline-5">
-<h5 id="orga5ed7ca"><span class="section-number-5">1.3.4.1</span> carre</h5>
+<div id="outline-container-org5d0aa0a" class="outline-5">
+<h5 id="org5d0aa0a"><span class="section-number-5">1.3.4.1</span> carre</h5>
 <div class="outline-text-5" id="text-1-3-4-1">
 <div class="org-src-container">
-<pre class="src src-js" id="org81b7324"><span style="color: #80A0C2;">for</span> <span style="color: #80A0C2;">(</span><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">i</span>=<span style="color: #B58DAE; font-weight: bold;">1</span>; i&lt;=<span style="color: #B58DAE; font-weight: bold;">10</span>; i++<span style="color: #80A0C2;">)</span> <span style="color: #80A0C2;">{</span>
+<pre class="src src-js" id="orgc5194af"><span style="color: #80A0C2;">for</span> <span style="color: #80A0C2;">(</span><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">i</span>=<span style="color: #B58DAE; font-weight: bold;">1</span>; i&lt;=<span style="color: #B58DAE; font-weight: bold;">10</span>; i++<span style="color: #80A0C2;">)</span> <span style="color: #80A0C2;">{</span>
     <span style="color: #80A0C2;">for</span> <span style="color: #B58DAE;">(</span><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">j</span>=<span style="color: #B58DAE; font-weight: bold;">1</span>; j&lt;=<span style="color: #B58DAE; font-weight: bold;">2</span>; j++<span style="color: #B58DAE;">)</span> <span style="color: #B58DAE;">{</span>
         fd<span style="color: #A2BF8A;">(</span>i*<span style="color: #B58DAE; font-weight: bold;">10</span><span style="color: #A2BF8A;">)</span>; rt<span style="color: #A2BF8A;">(</span><span style="color: #B58DAE; font-weight: bold;">90</span><span style="color: #A2BF8A;">)</span>;
     <span style="color: #B58DAE;">}</span>
@@ -456,15 +456,15 @@ polygoneRegPointu<span style="color: #80A0C2;">(</span><span style="color: #B58D
 </dl>
 
 <div class="org-src-container">
-<pre class="src src-js" id="org3ec5979"><span style="color: #80A0C2;">for</span> <span style="color: #80A0C2;">(</span><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">i</span>=<span style="color: #B58DAE; font-weight: bold;">1</span>; i&lt;=<span style="color: #B58DAE; font-weight: bold;">20</span>; i++<span style="color: #80A0C2;">)</span> <span style="color: #80A0C2;">{</span>
+<pre class="src src-js" id="orgf72ea95"><span style="color: #80A0C2;">for</span> <span style="color: #80A0C2;">(</span><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">i</span>=<span style="color: #B58DAE; font-weight: bold;">1</span>; i&lt;=<span style="color: #B58DAE; font-weight: bold;">20</span>; i++<span style="color: #80A0C2;">)</span> <span style="color: #80A0C2;">{</span>
     fd<span style="color: #B58DAE;">(</span><span style="color: #A2BF8A;">(</span><span style="color: #80A0C2;">(</span>i+<span style="color: #B58DAE; font-weight: bold;">1</span><span style="color: #80A0C2;">)</span>&gt;&gt;<span style="color: #B58DAE; font-weight: bold;">1</span><span style="color: #A2BF8A;">)</span>*<span style="color: #B58DAE; font-weight: bold;">10</span><span style="color: #B58DAE;">)</span>; rt<span style="color: #B58DAE;">(</span><span style="color: #B58DAE; font-weight: bold;">90</span><span style="color: #B58DAE;">)</span>;
 <span style="color: #80A0C2;">}</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgd4dc598" class="outline-5">
-<h5 id="orgd4dc598"><span class="section-number-5">1.3.4.2</span> ronde</h5>
+<div id="outline-container-org7e9aec8" class="outline-5">
+<h5 id="org7e9aec8"><span class="section-number-5">1.3.4.2</span> ronde</h5>
 <div class="outline-text-5" id="text-1-3-4-2">
 <dl class="org-dl">
 <dt>note</dt><dd>d&rsquo;abord un cercle est mathématiquement
@@ -495,7 +495,7 @@ donc le cote devient de plus en plus en plus grand
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: frederic boileau</p>
-<p class="date">Created: 2019-12-08 Sun 01:35</p>
+<p class="date">Created: 2019-12-08 Sun 03:17</p>
 </div>
 </body>
 </html>
