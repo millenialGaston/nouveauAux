@@ -8,14 +8,31 @@
 
 * final 2014
 ** echauffement (14 points)
+:PROPERTIES:
+:header-args: :results table
+:END:
+*** a
+
+Ici il faut faire attention à deux choses:
+/les règles de préscéance des opérateurs/, ainsi que
+les cast implicite fait par javascript lorsqu'un
+opérateur agit sur deux éléments de différent type,
+e.g. =2.0 + "a"=
+
 #+begin_src js
 let a=1,b=3;
 console.log((a+b)+"+"+b+a ,"=",2*(a+b))
 #+end_src
 
 #+RESULTS:
-: 4+31 = 8
-: undefined
+| 4+31 = 8 |
+
+*** b
+
+La deuxième ligne du programme demande à l'ordinateur
+d'imprimer le ratio de deux nombres entiers ce qui donne
+un nombre à virgule à l'écran; on constate donc que le nombre
+`rationel` a/b est converti en nombre à virgule.
 
 #+begin_src js
 let a=1,b=3;
@@ -23,16 +40,34 @@ console.log(a/b);
 #+end_src
 
 #+RESULTS:
+| 0.3333333333333333 |
 
 
+*** c
+Maintenant toute l'arnaque est dans la préscéance des
+opérateurs.
 #+begin_src js
 let a=1,b=3;
 console.log(a-b+1-b*a);
 #+end_src
 
 #+RESULTS:
-: -4
-: undefined
+| -4 |
+
+La multiplication et la division /brisent/ en quelque sorte
+les parenthèses qui s'associent à gauche en définissant l'ordre
+d'application des opérations.
+#+BEGIN_SRC js
+let a=1;b=3;
+console.log((((a)-b)+1) -b*a)
+#+END_SRC
+
+#+RESULTS:
+| -4 |
+
+
+
+*** d
 
 #+begin_src js
 let a=1,b=3;
