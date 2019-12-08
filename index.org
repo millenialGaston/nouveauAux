@@ -8,7 +8,10 @@
 
 * liens utiles
 
-- https://discord.gg/jTu9aWW
+- Pour poser des questions : https://discord.gg/jTu9aWW
+- La documentation de Mozilla en ligne est excellente. Je vous conseille
+  de vous rafraîchir la mémoire sur par exemple:
+  [[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt][String.prototype.charAt() - JavaScript | MDN]]
 
 
 
@@ -17,6 +20,8 @@
 - [[file:solutionnaireAncienFinal.org][solutionnaire ancien final]]
 
 - [[file:tortue.org][tortue]]
+
+- types ::
 
 - Boucles :: in progress
 

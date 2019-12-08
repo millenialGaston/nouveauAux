@@ -1,4 +1,4 @@
-#+TITLE: solutionnaireAncienFinal
+#+TITLE: solutionnaire final A14
 #+author: frederic boileau
 #+email: frederic.boileau@protonmail.com
 #+HTML_HEAD: <link rel="stylesheet" type="text/css" href="blog.css" />
@@ -6,28 +6,49 @@
 #+startup:  inlineimages lognoteclock-out hideblocks
 
 
-* final 2014
-** echauffement (14 points)
+* documents
+
+- [[file:ift1016_official_docs/A14-IFT1015-final.pdf][final a14]] ::  pdf
+
+* echauffement (14 points)
 :PROPERTIES:
 :header-args: :results table
 :END:
-*** a
 
-Ici il faut faire attention à deux choses:
-/les règles de préscéance des opérateurs/, ainsi que
-les cast implicite fait par javascript lorsqu'un
-opérateur agit sur deux éléments de différent type,
-e.g. =2.0 + "a"=
+** a
 
 #+begin_src js
 let a=1,b=3;
-console.log((a+b)+"+"+b+a ,"=",2*(a+b))
+console.log(a+b+"+"+b+a ,"=",2*(a+b))
 #+end_src
 
 #+RESULTS:
 | 4+31 = 8 |
 
-*** b
+Ici il faut faire attention à deux choses: /les règles de préscéance des
+opérateurs/, ainsi que les cast implicite fait par javascript lorsqu'un
+opérateur agit sur deux éléments de différent type, e.g. =2.0 + "a"=
+
+Lorsque nous avons une expression un peu longue et farfelue l'important est de
+déterminer avant tout la préséance des opérateurs si elle n'est pas apparente
+immédiatement.
+
+#+BEGIN_SRC js
+(a + b + "+" + b + a, "=", 2*(a + b))
+(((((a)+ b)+ "+") + b) + a)
+#+END_SRC
+
+=a= et =b= seront donc additionnés comme des nombres mais par la suite le
+résultat de cette addition sera convertit en string par js pour être
+*concaténné* avec le caractère plus.
+
+Le résultat intermédiaire additionné au second b (l'avant dernier terme) est
+donc une chaîne de caractère. Le 3 est donc concatenné au 1 ce qui donne
+l'impression de l'équation absurde.
+
+
+
+** b
 
 La deuxième ligne du programme demande à l'ordinateur
 d'imprimer le ratio de deux nombres entiers ce qui donne
@@ -43,7 +64,8 @@ console.log(a/b);
 | 0.3333333333333333 |
 
 
-*** c
+** c
+
 Maintenant toute l'arnaque est dans la préscéance des
 opérateurs.
 #+begin_src js
@@ -67,7 +89,7 @@ console.log((((a)-b)+1) -b*a)
 
 
 
-*** d
+** d
 
 #+begin_src js
 let a=1,b=3;
