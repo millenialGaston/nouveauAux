@@ -144,7 +144,8 @@ console.log([a,"b",b]);
 #+RESULTS:
 : [ 1, 'b', 3 ]
 
-** que produit ce code
+** f
+
 #+begin_src js :results verbatim
 var t = [1,2,3];
 var r = [5,6,7];
@@ -154,8 +155,35 @@ let quiz = function(r,t) {
     console.log(t);
     return r;
 };
+
+var t = [1,2,3];
+var r = ["a", "b", "c"];
+var s = quiz(t,r);
 console.log(quiz(f,q));
 #+end_src
+
+Un nombre de points importants:
+
+ 1. les noms des /paramètres/ des fonctions  sont *protégés* du reste du
+    programme. par exemple dans `var s = quiz(t,r)` les variables t et r
+    sont associées à leurs paramètres respectifs *uniquement en fonction
+    de leur position dans l'appel de la fonction*.
+
+    Ainsi pour bien lire la ligne =var s = quiz(t,r)= il faut surtout
+    se rappeler que =t= n'était qu'une variable pour le tableau =[1,2,3]=.
+    La fonction va donc /binder/ ou assigner la *valeur* =[1,2,3]= , au
+    paramètre =r=, et l'autre à l'autre ... , pour ensuite exécuter la fonction
+    avec ces nouvelles valeurs concrètes en place des paramètres.
+
+ 2. La ligne =r = t;= ne fait pas ce que la majorité de vous pensez. Puisque
+    =t= est un tableau c'est un conteneur. Lorsque l'on copie un conteneur
+    on peut soit copier uniquement le conteneur, ou alors copier le conteneur
+    *et* faire une copie de chaque élément qui se trouvait dans =t=. Pour bien
+    sur par la suite les diposés dans le nouveau conteneur.
+
+    *Ainsi, après le statement =r = t;= =r= est maintenant un nouveau conteneur
+    mais qui contient les mêmes éléments que =t= !* Modifier un élément qui est
+    dans =r= va donc modifier son homologue dans =t=.
 
 #+RESULTS:
 #+begin_src js :results verbatim
