@@ -1,10 +1,11 @@
 #+TITLE: solutionnaire final A14
 #+author: frederic boileau
 #+email: frederic.boileau@protonmail.com
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="blog.css" />
+#+html_head: <link rel="stylesheet" type="text/css" href="https://gongzhitaao.org/orgcss/org.css"/>
 #+OPTIONS: toc:nil num:nil html-style:nil
 #+startup:  inlineimages lognoteclock-out hideblocks
 
+- [[file:index.org][index]]
 
 * echauffement (14 points)
 :PROPERTIES:
