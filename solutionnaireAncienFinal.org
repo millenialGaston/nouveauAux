@@ -292,18 +292,85 @@ console.log(genereJusquaZero(10));
 
 
 ** statistiques sur la série générée
-#+BEGIN_QUOTE
 • le nombre de tirages non nuls réalisés,
+ - cest simplement la longueur du tableau
 • le nombre d'entiers pairs tirés (la valeur 0 n'est pas comptée) et
 le pourcentage que cela représente par rapport au nombre total de tirages non
 nuls,
-
-• la moyenne des entiers impairs. Pour les tirages successifs: 1 5 3 69 56 0,
+ - un compteur, une boucle et un simple petit opérateur conditionnel suffisent
+• Pour les tirages successifs: 1 5 3 69 56 0,
 l'affichage suivant doit être produit: 5 tirages >O, nbpairs: 1 (20.00%) moy
 pairs: 56.00 moy impairs: 26.80
-#+END_QUOTE
 
 
-#+begin_src js
 
-#+end_src
+#+BEGIN_SRC js :results verbatim
+let genereJusquaZero  = function(range){
+    const facteur = range + 1;
+    let zeroTire = false;
+    let gen = function(){
+        return Math.floor((facteur*Math.random()));
+    };
+    let x = gen();
+    var tableau = [];
+    while(x != 0 ){
+        tableau.push(x);
+        x = gen();
+    }
+    return tableau;
+}
+
+
+let genereStats  = function(tableau){
+    let nbPairs = 0;
+    for(i = 0; i < tableau.length; i++){
+        nbPairs += (tableau[i] % 2 == 0) ? 1 : 0;
+    }
+    return { nbTirages : tableau.length,
+             nbPairs   : nbPairs,
+             nbImpairs : tableau.length - nbPairs,
+             totalPair : 0,
+             totalImpair: 0};
+
+}
+
+let moyenneImpairs = function(tableau){
+    let stats = genereStats(tableau);
+    for(i=0; i < stats.nbTirages; i++){
+        if(tableau[i] % 2 == 0)
+            stats.totalPair += tableau[i];
+        else
+            stats.totalImpair += tableau[i];
+    }
+    return stats;
+}
+
+let run = function(range){
+    tableau = genereJusquaZero(range);
+    toprint = moyenneImpairs(tableau);
+
+    console.log(tableau);
+    console.log(toprint);
+
+
+}
+const range = 10;
+run(range);
+    #+end_src
+
+#+RESULTS:
+#+begin_example
+[
+  10, 2, 6, 9, 3,
+   6, 4, 1, 5, 1,
+   6
+]
+{
+  nbTirages: 11,
+  nbPairs: 6,
+  nbImpairs: 5,
+  totalPair: 34,
+  totalImpair: 19
+}
+undefined
+#+end_example
