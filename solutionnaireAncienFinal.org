@@ -185,26 +185,45 @@ Un nombre de points importants:
     mais qui contient les mêmes éléments que =t= !* Modifier un élément qui est
     dans =r= va donc modifier son homologue dans =t=.
 
-#+RESULTS:
+Nous pouvons donc écrire un programme équivalent plus facile à lire:
+
+- important :: on se rappelle que le nom des paramètres d'une fonction
+  et des variables déclarées à l'intérieure de celle-ci n'ont aucun
+  sens pour le programme en dehors de la fonction.
+  
 #+begin_src js :results verbatim
-var t = [1,2,3];
-var r = ["a","b","c"];
+var coucou = [1,2,3];
+var bonjour = ["a","b","c"];
+
 let quiz = function(r,t) {
-    r = t;
-    t[1] = r[2];
-    return r;
+    r = t; //écrase le premier tableau
+    t[1] = r[2]; // copie le contenu de la troisième case  à la deuxième
+    return r; // retourne le "premier" tableau, c'est à dire le deuxième mtn..
 };
 
-var s = quiz(t,r);
+var troisieme = quiz(coucou,bonjour);
 
-console.log(t);
-console.log(r);
-s[1] = 5;
-console.log("t=",t,"r=",r,"s=",s);
+console.log(coucou);
+console.log(bonjour);
+troisieme[1] = 5;
+console.log("coucou=",coucou,"bonjour=",bonjour,"troisieme=",troisieme);
 #+end_src
 
 #+RESULTS:
 : [ 1, 2, 3 ]
+: [ 'a', 'c', 'c' ]
+: coucou= [ 1, 2, 3 ] bonjour= [ 'a', 5, 'c' ] troisieme= [ 'a', 5, 'c' ]
+
+
+Comme on peut le voir coucou ne change pas durant l’exécution du
+programme jusqu'à la ligne =troisième[1] = 5;=. Bonjour par contre se voit
+remplacer son deuxième élément par son troisième (=t[1] = r[2]= dans la fonction
+quizz.)
+
+Finalement la ligne =troisieme[1] = 5= va modifier le tableau =bonjour= aussi
+puisque le tableau =troisième= contient les mêmes éléments que =bonjour=.
+
+
 : [ 'a', 'c', 'c' ]
 : t= [ 1, 2, 3 ] r= [ 'a', 5, 'c' ] s= [ 'a', 5, 'c' ]
 : undefined
