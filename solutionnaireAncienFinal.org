@@ -6,10 +6,6 @@
 #+startup:  inlineimages lognoteclock-out hideblocks
 
 
-* documents
-
-- [[file:ift1016_official_docs/A14-IFT1015-final.pdf][final a14]] ::  pdf
-
 * echauffement (14 points)
 :PROPERTIES:
 :header-args: :results table :exports both
@@ -45,7 +41,6 @@ résultat de cette addition sera convertit en string par js pour être
 Le résultat intermédiaire additionné au second b (l'avant dernier terme) est
 donc une chaîne de caractère. Le 3 est donc concatenné au 1 ce qui donne
 l'impression de l'équation absurde.
-
 
 
 ** b
@@ -133,7 +128,6 @@ console.log("2" === 2);
 #+END_SRC
 je vois mal comment deviner
 
-
 ** e
 
 #+begin_src js :results verbatim
@@ -145,7 +139,6 @@ console.log([a,"b",b]);
 : [ 1, 'b', 3 ]
 
 ** f
-
 #+begin_src js :results verbatim
 var t = [1,2,3];
 var r = [5,6,7];
@@ -228,7 +221,8 @@ puisque le tableau =troisième= contient les mêmes éléments que =bonjour=.
 : t= [ 1, 2, 3 ] r= [ 'a', 5, 'c' ] s= [ 'a', 5, 'c' ]
 : undefined
 
-** -Boucles simples (a) (6 points)
+
+* Boucles simples (a) (6 points)
 Écrire une fonction loop qui tire aléatoirement des nombres entiers entre O et
 10 0 (inclus).
 Les tirages s'arrêtent lorsque la valeur 0 est tirée;
