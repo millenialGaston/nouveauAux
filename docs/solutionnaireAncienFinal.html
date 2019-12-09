@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <?xml version="1.0" encoding="utf-8"?>
-<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-12-08 Sun 06:50 -->
+<!-- 2019-12-09 Mon 14:55 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>solutionnaire final A14</title>
 <meta name="generator" content="Org mode" />
 <meta name="author" content="frederic boileau" />
-<link rel="stylesheet" type="text/css" href="blog.css" />
+<link rel="stylesheet" type="text/css" href="https://gongzhitaao.org/orgcss/org.css"/>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -62,16 +61,9 @@ for the JavaScript code in this tag.
 <body>
 <div id="content">
 <h1 class="title">solutionnaire final A14</h1>
-
-
-<div id="outline-container-org4a6f9a9" class="outline-2">
-<h2 id="org4a6f9a9">documents</h2>
-<div class="outline-text-2" id="text-org4a6f9a9">
-<dl class="org-dl">
-<dt><a href="ift1016_official_docs/A14-IFT1015-final.pdf">final a14</a></dt><dd>pdf</dd>
-</dl>
-</div>
-</div>
+<ul class="org-ul">
+<li><a href="index.html">index</a></li>
+</ul>
 
 <div id="outline-container-org2e9eac6" class="outline-2">
 <h2 id="org2e9eac6">echauffement (14 points)</h2>
@@ -131,7 +123,6 @@ l&rsquo;impression de l&rsquo;équation absurde.
 </p>
 </div>
 </div>
-
 
 
 <div id="outline-container-org26be714" class="outline-3">
@@ -326,7 +317,6 @@ je vois mal comment deviner
 </div>
 </div>
 
-
 <div id="outline-container-orgd43a764" class="outline-3">
 <h3 id="orgd43a764">e</h3>
 <div class="outline-text-3" id="text-orgd43a764">
@@ -398,102 +388,179 @@ dans <code>r</code> va donc modifier son homologue dans <code>t</code>.
 </p></li>
 </ol>
 
+<p>
+Nous pouvons donc écrire un programme équivalent plus facile à lire:
+</p>
+
+<dl class="org-dl">
+<dt>important</dt><dd>on se rappelle que le nom des paramètres d&rsquo;une fonction
+et des variables déclarées à l&rsquo;intérieure de celle-ci n&rsquo;ont aucun
+sens pour le programme en dehors de la fonction.</dd>
+</dl>
+
 <div class="org-src-container">
-<pre class="src src-js"><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">t</span> = <span style="color: #80A0C2;">[</span><span style="color: #B58DAE; font-weight: bold;">1</span>,<span style="color: #B58DAE; font-weight: bold;">2</span>,<span style="color: #B58DAE; font-weight: bold;">3</span><span style="color: #80A0C2;">]</span>;
-<span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">r</span> = <span style="color: #80A0C2;">[</span><span style="color: #A2BF8A;">"a"</span>,<span style="color: #A2BF8A;">"b"</span>,<span style="color: #A2BF8A;">"c"</span><span style="color: #80A0C2;">]</span>;
+<pre class="src src-js"><span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">coucou</span> = <span style="color: #80A0C2;">[</span><span style="color: #B58DAE; font-weight: bold;">1</span>,<span style="color: #B58DAE; font-weight: bold;">2</span>,<span style="color: #B58DAE; font-weight: bold;">3</span><span style="color: #80A0C2;">]</span>;
+<span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">bonjour</span> = <span style="color: #80A0C2;">[</span><span style="color: #A2BF8A;">"a"</span>,<span style="color: #A2BF8A;">"b"</span>,<span style="color: #A2BF8A;">"c"</span><span style="color: #80A0C2;">]</span>;
+
 <span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">quiz</span> = <span style="color: #80A0C2;">function</span><span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">r</span>,<span style="color: #dac6d6;">t</span><span style="color: #80A0C2;">)</span> <span style="color: #80A0C2;">{</span>
-    r = t;
-    t<span style="color: #B58DAE;">[</span><span style="color: #B58DAE; font-weight: bold;">1</span><span style="color: #B58DAE;">]</span> = r<span style="color: #B58DAE;">[</span><span style="color: #B58DAE; font-weight: bold;">2</span><span style="color: #B58DAE;">]</span>;
-    <span style="color: #80A0C2;">return</span> r;
+    r = t; <span style="color: #6f7787;">//</span><span style="color: #6f7787;">&#233;crase le premier tableau</span>
+    t<span style="color: #B58DAE;">[</span><span style="color: #B58DAE; font-weight: bold;">1</span><span style="color: #B58DAE;">]</span> = r<span style="color: #B58DAE;">[</span><span style="color: #B58DAE; font-weight: bold;">2</span><span style="color: #B58DAE;">]</span>; <span style="color: #6f7787;">// </span><span style="color: #6f7787;">copie le contenu de la troisi&#232;me case  &#224; la deuxi&#232;me</span>
+    <span style="color: #80A0C2;">return</span> r; <span style="color: #6f7787;">// </span><span style="color: #6f7787;">retourne le "premier" tableau, c'est &#224; dire le deuxi&#232;me mtn..</span>
 <span style="color: #80A0C2;">}</span>;
 
-<span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">s</span> = quiz<span style="color: #80A0C2;">(</span>t,r<span style="color: #80A0C2;">)</span>;
+<span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">troisieme</span> = quiz<span style="color: #80A0C2;">(</span>coucou,bonjour<span style="color: #80A0C2;">)</span>;
 
-console.log<span style="color: #80A0C2;">(</span>t<span style="color: #80A0C2;">)</span>;
-console.log<span style="color: #80A0C2;">(</span>r<span style="color: #80A0C2;">)</span>;
-s<span style="color: #80A0C2;">[</span><span style="color: #B58DAE; font-weight: bold;">1</span><span style="color: #80A0C2;">]</span> = <span style="color: #B58DAE; font-weight: bold;">5</span>;
-console.log<span style="color: #80A0C2;">(</span><span style="color: #A2BF8A;">"t="</span>,t,<span style="color: #A2BF8A;">"r="</span>,r,<span style="color: #A2BF8A;">"s="</span>,s<span style="color: #80A0C2;">)</span>;
+console.log<span style="color: #80A0C2;">(</span>coucou<span style="color: #80A0C2;">)</span>;
+console.log<span style="color: #80A0C2;">(</span>bonjour<span style="color: #80A0C2;">)</span>;
+troisieme<span style="color: #80A0C2;">[</span><span style="color: #B58DAE; font-weight: bold;">1</span><span style="color: #80A0C2;">]</span> = <span style="color: #B58DAE; font-weight: bold;">5</span>;
+console.log<span style="color: #80A0C2;">(</span><span style="color: #A2BF8A;">"coucou="</span>,coucou,<span style="color: #A2BF8A;">"bonjour="</span>,bonjour,<span style="color: #A2BF8A;">"troisieme="</span>,troisieme<span style="color: #80A0C2;">)</span>;
 </pre>
 </div>
 
 <pre class="example">
 [ 1, 2, 3 ]
 [ 'a', 'c', 'c' ]
+coucou= [ 1, 2, 3 ] bonjour= [ 'a', 5, 'c' ] troisieme= [ 'a', 5, 'c' ]
+undefined
+</pre>
+
+
+
+<p>
+Comme on peut le voir coucou ne change pas durant l’exécution du
+programme jusqu&rsquo;à la ligne <code>troisième[1] = 5;</code>. Bonjour par contre se voit
+remplacer son deuxième élément par son troisième (<code>t[1] = r[2]</code> dans la fonction
+quizz.)
+</p>
+
+<p>
+Finalement la ligne <code>troisieme[1] = 5</code> va modifier le tableau <code>bonjour</code> aussi
+puisque le tableau <code>troisième</code> contient les mêmes éléments que <code>bonjour</code>.
+</p>
+
+
+<pre class="example">
+[ 'a', 'c', 'c' ]
 t= [ 1, 2, 3 ] r= [ 'a', 5, 'c' ] s= [ 'a', 5, 'c' ]
 undefined
 </pre>
 </div>
 </div>
+</div>
 
-<div id="outline-container-orga386269" class="outline-3">
-<h3 id="orga386269">-Boucles simples (a) (6 points)</h3>
-<div class="outline-text-3" id="text-orga386269">
+
+<div id="outline-container-orgb659579" class="outline-2">
+<h2 id="orgb659579">Boucles simples  (6 points)</h2>
+<div class="outline-text-2" id="text-orgb659579">
+</div>
+<div id="outline-container-orgdb179e2" class="outline-3">
+<h3 id="orgdb179e2">a)</h3>
+<div class="outline-text-3" id="text-orgdb179e2">
+<blockquote>
 <p>
 Écrire une fonction loop qui tire aléatoirement des nombres entiers entre O et
-10 0 (inclus).
-Les tirages s&rsquo;arrêtent lorsque la valeur 0 est tirée;
+10 0 (inclus). Les tirages s&rsquo;arrêtent lorsque la valeur 0 est tirée;
 </p>
+</blockquote>
+
+<ul class="org-ul">
+<li>variables d&rsquo;état : un booléen pour tester si la valeur 0 a été tirée.</li>
+<li>constantes : un nombre entier, 10, qui donne le nombre l&rsquo;intervale</li>
+<li>fonctions :
+<dl class="org-dl">
+<dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random">Math.random</a> </dt><dd>une fonction qui genere des nombre aleatoires dans l&rsquo;intervalle [0,1), c&rsquo;est à dire inclusif à gauche mais exclusif à droite.</dd>
+<dt><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor">Math.floor</a> </dt><dd>floor pour <i>plancher</i>, une fonction qui arrondi par le bas.</dd>
+</dl></li>
+
+<li>structure de données :
+<ul class="org-ul">
+<li>un tableau pour accumuler les tires</li>
+</ul></li>
+</ul>
 
 <div class="org-src-container">
-<pre class="src src-js"><span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">gen</span> = <span style="color: #80A0C2;">function</span><span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">range</span><span style="color: #80A0C2;">){</span><span style="color: #80A0C2;">return</span> Math.floor<span style="color: #B58DAE;">(</span><span style="color: #A2BF8A;">(</span>range*Math.random<span style="color: #80A0C2;">()</span><span style="color: #A2BF8A;">)</span><span style="color: #B58DAE;">)</span>;<span style="color: #80A0C2;">}</span>;
-<span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">x</span> = gen<span style="color: #80A0C2;">(</span><span style="color: #B58DAE; font-weight: bold;">10</span><span style="color: #80A0C2;">)</span>;
-<span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">tableau</span> = <span style="color: #80A0C2;">[</span>x<span style="color: #80A0C2;">]</span>;
-<span style="color: #80A0C2;">while</span> <span style="color: #80A0C2;">(</span>x != <span style="color: #B58DAE; font-weight: bold;">0</span><span style="color: #80A0C2;">){</span>
-    x = gen<span style="color: #B58DAE;">(</span><span style="color: #B58DAE; font-weight: bold;">10</span><span style="color: #B58DAE;">)</span>;
-    tableau.push<span style="color: #B58DAE;">(</span>x<span style="color: #B58DAE;">)</span>;
+<pre class="src src-js" id="orgc2a8fc9"><span style="color: #80A0C2;">const</span> <span style="color: #dac6d6;">range</span> = <span style="color: #B58DAE; font-weight: bold;">10</span>;
+<span style="color: #80A0C2;">const</span> <span style="color: #dac6d6;">facteur</span> = range + <span style="color: #B58DAE; font-weight: bold;">1</span>; <span style="color: #6f7787;">// </span><span style="color: #6f7787;">puise Math.random exlue 1</span>
+<span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">zeroTire</span> = <span style="color: #B58DAE;">false</span>;
+
+<span style="color: #6f7787;">//</span><span style="color: #6f7787;">la fonction gen</span>
+<span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">gen</span> = <span style="color: #80A0C2;">function</span><span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">range</span><span style="color: #80A0C2;">){</span>
+    <span style="color: #80A0C2;">return</span> Math.floor<span style="color: #B58DAE;">(</span><span style="color: #A2BF8A;">(</span>facteur*Math.random<span style="color: #80A0C2;">()</span><span style="color: #A2BF8A;">)</span><span style="color: #B58DAE;">)</span>;
 <span style="color: #80A0C2;">}</span>;
-console.log<span style="color: #80A0C2;">(</span>tableau<span style="color: #80A0C2;">)</span>;
-<span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">stats</span> <span style="color: #80A0C2;">function</span><span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">tableau</span><span style="color: #80A0C2;">)</span> <span style="color: #80A0C2;">{</span>
-   <span style="color: #6f7787;">// </span><span style="color: #6f7787;">le nombre de tirages non nuls r&#233;alis&#233;s,</span>
 
-
+<span style="color: #6f7787;">//</span><span style="color: #6f7787;">initialisation, c a d premier tir et initialisation du tableau</span>
+<span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">x</span> = gen<span style="color: #80A0C2;">(</span><span style="color: #B58DAE; font-weight: bold;">10</span><span style="color: #80A0C2;">)</span>;
+<span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">tableau</span> = <span style="color: #80A0C2;">[]</span>;
+<span style="color: #80A0C2;">while</span><span style="color: #80A0C2;">(</span>x != <span style="color: #B58DAE; font-weight: bold;">0</span><span style="color: #80A0C2;">){</span>
+    tableau.push<span style="color: #B58DAE;">(</span>x<span style="color: #B58DAE;">)</span>;
+    x = gen<span style="color: #B58DAE;">(</span><span style="color: #B58DAE; font-weight: bold;">10</span><span style="color: #B58DAE;">)</span>;
 <span style="color: #80A0C2;">}</span>
+console.log<span style="color: #80A0C2;">(</span>tableau<span style="color: #80A0C2;">)</span>;
 </pre>
 </div>
 
-<p>
-et la
-fonction affiche selon lexemple donné ci-après:
-• le nombre de tirages non nuls réalisés,
-</p>
 
 <p>
+Maintenant on peut <i>wrapper</i> ce programme dans une fonction.
+</p>
+<ul class="org-ul">
+<li>En general les constantes deviennent des paramètres.</li>
+<li>au lieu de print le truc qui nous interesse on le retourne</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-js"><span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">genereJusquaZero</span>  = <span style="color: #80A0C2;">function</span><span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">range</span><span style="color: #80A0C2;">){</span>
+    <span style="color: #80A0C2;">const</span> <span style="color: #dac6d6;">facteur</span> = range + <span style="color: #B58DAE; font-weight: bold;">1</span>;
+    <span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">zeroTire</span> = <span style="color: #B58DAE;">false</span>;
+    <span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">gen</span> = <span style="color: #80A0C2;">function</span><span style="color: #B58DAE;">(){</span>
+        <span style="color: #80A0C2;">return</span> Math.floor<span style="color: #A2BF8A;">(</span><span style="color: #80A0C2;">(</span>facteur*Math.random<span style="color: #B58DAE;">()</span><span style="color: #80A0C2;">)</span><span style="color: #A2BF8A;">)</span>;
+    <span style="color: #B58DAE;">}</span>;
+    <span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">x</span> = gen<span style="color: #B58DAE;">()</span>;
+    <span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">tableau</span> = <span style="color: #B58DAE;">[]</span>;
+    <span style="color: #80A0C2;">while</span><span style="color: #B58DAE;">(</span>x != <span style="color: #B58DAE; font-weight: bold;">0</span> <span style="color: #B58DAE;">){</span>
+        tableau.push<span style="color: #A2BF8A;">(</span>x<span style="color: #A2BF8A;">)</span>;
+        x = gen<span style="color: #A2BF8A;">()</span>;
+    <span style="color: #B58DAE;">}</span>
+    <span style="color: #80A0C2;">return</span> tableau;
+<span style="color: #80A0C2;">}</span>
+<span style="color: #6f7787;">//</span><span style="color: #6f7787;">petit test</span>
+console.log<span style="color: #80A0C2;">(</span>genereJusquaZero<span style="color: #B58DAE;">(</span><span style="color: #B58DAE; font-weight: bold;">10</span><span style="color: #B58DAE;">)</span><span style="color: #80A0C2;">)</span>;
+</pre>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org6f11027" class="outline-3">
+<h3 id="org6f11027">statistiques sur la série générée</h3>
+<div class="outline-text-3" id="text-org6f11027">
+<blockquote>
+<p>
+• le nombre de tirages non nuls réalisés,
 • le nombre d&rsquo;entiers pairs tirés (la valeur 0 n&rsquo;est pas comptée) et
 le pourcentage que cela représente par rapport au nombre total de tirages non
 nuls,
 </p>
-
 
 <p>
 • la moyenne des entiers impairs. Pour les tirages successifs: 1 5 3 69 56 0,
 l&rsquo;affichage suivant doit être produit: 5 tirages &gt;O, nbpairs: 1 (20.00%) moy
 pairs: 56.00 moy impairs: 26.80
 </p>
+</blockquote>
+
 
 <div class="org-src-container">
 <pre class="src src-js">
 </pre>
 </div>
-
-<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-
-
-<colgroup>
-<col  class="org-left" />
-</colgroup>
-<tbody>
-<tr>
-<td class="org-left">undefined</td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: frederic boileau</p>
-<p class="date">Created: 2019-12-08 Sun 06:50</p>
+<p class="date">Created: 2019-12-09 Mon 14:55</p>
 </div>
 </body>
 </html>

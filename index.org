@@ -52,7 +52,7 @@
         ("demos-static"
          :base-directory "~/nouveauAux/"
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-         :publishing-directory "~/nouveauAux/publish/static"
+         :publishing-directory "~/nouveauAux/docs"
          :recursive t
          :publishing-function org-publish-attachment)
 
@@ -60,6 +60,6 @@
 #+END_SRC
 
 #+RESULTS:
-| demos-org    | :base-directory | ~/nouveauAux             | :base-extension | org  | :publishing-directory | ~/nouveauAux/publish | :recursive | t    | :exclude | */ignore/* | :publishing-function | org-html-publish-to-html | :headline-levels      |                           4 | :auto-preamble | t |                      |                        |
-| demos-static | :base-directory | ~/nouveauAux/            | :base-extension | css\ | js\                   | png\                 | jpg\       | gif\ | pdf\     | mp3\       | ogg\                 | swf                      | :publishing-directory | ~/nouveauAux/publish/static | :recursive     | t | :publishing-function | org-publish-attachment |
-| demos        | :components     | (demos-org demos-static) |                 |      |                       |                      |            |      |          |            |                      |                          |                       |                             |                |   |                      |                        |
+| demos-org    | :base-directory | ~/nouveauAux             | :base-extension | org  | :publishing-directory | ~/nouveauAux/docs | :recursive | t    | :exclude | */ignore/* | :publishing-function | org-html-publish-to-html | :headline-levels      |                           4 | :auto-preamble | t |                      |                        |
+| demos-static | :base-directory | ~/nouveauAux/            | :base-extension | css\ | js\                   | png\              | jpg\       | gif\ | pdf\     | mp3\       | ogg\                 | swf                      | :publishing-directory | ~/nouveauAux/publish/static | :recursive     | t | :publishing-function | org-publish-attachment |
+| demos        | :components     | (demos-org demos-static) |                 |      |                       |                   |            |      |          |            |                      |                          |                       |                             |                |   |                      |                        |
