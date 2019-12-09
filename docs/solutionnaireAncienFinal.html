@@ -4,7 +4,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2019-12-09 Mon 14:55 -->
+<!-- 2019-12-09 Mon 18:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>solutionnaire final A14</title>
@@ -534,24 +534,80 @@ console.log<span style="color: #80A0C2;">(</span>genereJusquaZero<span style="co
 <div id="outline-container-org6f11027" class="outline-3">
 <h3 id="org6f11027">statistiques sur la série générée</h3>
 <div class="outline-text-3" id="text-org6f11027">
-<blockquote>
 <p>
 • le nombre de tirages non nuls réalisés,
+</p>
+<ul class="org-ul">
+<li>cest simplement la longueur du tableau</li>
+</ul>
+<p>
 • le nombre d&rsquo;entiers pairs tirés (la valeur 0 n&rsquo;est pas comptée) et
 le pourcentage que cela représente par rapport au nombre total de tirages non
 nuls,
 </p>
-
+<ul class="org-ul">
+<li>un compteur, une boucle et un simple petit opérateur conditionnel suffisent</li>
+</ul>
 <p>
-• la moyenne des entiers impairs. Pour les tirages successifs: 1 5 3 69 56 0,
+• Pour les tirages successifs: 1 5 3 69 56 0,
 l&rsquo;affichage suivant doit être produit: 5 tirages &gt;O, nbpairs: 1 (20.00%) moy
 pairs: 56.00 moy impairs: 26.80
 </p>
-</blockquote>
+
 
 
 <div class="org-src-container">
-<pre class="src src-js">
+<pre class="src src-js"><span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">genereJusquaZero</span>  = <span style="color: #80A0C2;">function</span><span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">range</span><span style="color: #80A0C2;">){</span>
+    <span style="color: #80A0C2;">const</span> <span style="color: #dac6d6;">facteur</span> = range + <span style="color: #B58DAE; font-weight: bold;">1</span>;
+    <span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">zeroTire</span> = <span style="color: #B58DAE;">false</span>;
+    <span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">gen</span> = <span style="color: #80A0C2;">function</span><span style="color: #B58DAE;">(){</span>
+        <span style="color: #80A0C2;">return</span> Math.floor<span style="color: #A2BF8A;">(</span><span style="color: #80A0C2;">(</span>facteur*Math.random<span style="color: #B58DAE;">()</span><span style="color: #80A0C2;">)</span><span style="color: #A2BF8A;">)</span>;
+    <span style="color: #B58DAE;">}</span>;
+    <span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">x</span> = gen<span style="color: #B58DAE;">()</span>;
+    <span style="color: #80A0C2;">var</span> <span style="color: #dac6d6;">tableau</span> = <span style="color: #B58DAE;">[]</span>;
+    <span style="color: #80A0C2;">while</span><span style="color: #B58DAE;">(</span>x != <span style="color: #B58DAE; font-weight: bold;">0</span> <span style="color: #B58DAE;">){</span>
+        tableau.push<span style="color: #A2BF8A;">(</span>x<span style="color: #A2BF8A;">)</span>;
+        x = gen<span style="color: #A2BF8A;">()</span>;
+    <span style="color: #B58DAE;">}</span>
+    <span style="color: #80A0C2;">return</span> tableau;
+<span style="color: #80A0C2;">}</span>
+
+
+<span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">genereStats</span>  = <span style="color: #80A0C2;">function</span><span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">tableau</span><span style="color: #80A0C2;">){</span>
+    <span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">nbPairs</span> = <span style="color: #B58DAE; font-weight: bold;">0</span>;
+    <span style="color: #80A0C2;">for</span><span style="color: #B58DAE;">(</span>i = <span style="color: #B58DAE; font-weight: bold;">0</span>; i &lt; tableau.length; i++<span style="color: #B58DAE;">){</span>
+        nbPairs += <span style="color: #A2BF8A;">(</span>tableau<span style="color: #80A0C2;">[</span>i<span style="color: #80A0C2;">]</span> % <span style="color: #B58DAE; font-weight: bold;">2</span> == <span style="color: #B58DAE; font-weight: bold;">0</span><span style="color: #A2BF8A;">)</span> ? <span style="color: #B58DAE; font-weight: bold;">1</span> : <span style="color: #B58DAE; font-weight: bold;">0</span>;
+    <span style="color: #B58DAE;">}</span>
+    <span style="color: #80A0C2;">return</span> <span style="color: #B58DAE;">{</span> nbTirages : tableau.length,
+             nbPairs   : nbPairs,
+             nbImpairs : tableau.length - nbPairs,
+             totalPair : <span style="color: #B58DAE; font-weight: bold;">0</span>,
+             totalImpair: <span style="color: #B58DAE; font-weight: bold;">0</span><span style="color: #B58DAE;">}</span>;
+
+<span style="color: #80A0C2;">}</span>
+
+<span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">moyenneImpairs</span> = <span style="color: #80A0C2;">function</span><span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">tableau</span><span style="color: #80A0C2;">){</span>
+    <span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">stats</span> = genereStats<span style="color: #B58DAE;">(</span>tableau<span style="color: #B58DAE;">)</span>;
+    <span style="color: #80A0C2;">for</span><span style="color: #B58DAE;">(</span>i=<span style="color: #B58DAE; font-weight: bold;">0</span>; i &lt; stats.nbTirages; i++<span style="color: #B58DAE;">){</span>
+        <span style="color: #80A0C2;">if</span><span style="color: #A2BF8A;">(</span>tableau<span style="color: #80A0C2;">[</span>i<span style="color: #80A0C2;">]</span> % <span style="color: #B58DAE; font-weight: bold;">2</span> == <span style="color: #B58DAE; font-weight: bold;">0</span><span style="color: #A2BF8A;">)</span>
+            stats.totalPair += tableau<span style="color: #A2BF8A;">[</span>i<span style="color: #A2BF8A;">]</span>;
+        <span style="color: #80A0C2;">else</span>
+            stats.totalImpair += tableau<span style="color: #A2BF8A;">[</span>i<span style="color: #A2BF8A;">]</span>;
+    <span style="color: #B58DAE;">}</span>
+    <span style="color: #80A0C2;">return</span> stats;
+<span style="color: #80A0C2;">}</span>
+
+<span style="color: #80A0C2;">let</span> <span style="color: #dac6d6;">run</span> = <span style="color: #80A0C2;">function</span><span style="color: #80A0C2;">(</span><span style="color: #dac6d6;">range</span><span style="color: #80A0C2;">){</span>
+    tableau = genereJusquaZero<span style="color: #B58DAE;">(</span>range<span style="color: #B58DAE;">)</span>;
+    toprint = moyenneImpairs<span style="color: #B58DAE;">(</span>tableau<span style="color: #B58DAE;">)</span>;
+
+    console.log<span style="color: #B58DAE;">(</span>tableau<span style="color: #B58DAE;">)</span>;
+    console.log<span style="color: #B58DAE;">(</span>toprint<span style="color: #B58DAE;">)</span>;
+
+
+<span style="color: #80A0C2;">}</span>
+<span style="color: #80A0C2;">const</span> <span style="color: #dac6d6;">range</span> = <span style="color: #B58DAE; font-weight: bold;">10</span>;
+run<span style="color: #80A0C2;">(</span>range<span style="color: #80A0C2;">)</span>;
 </pre>
 </div>
 </div>
@@ -560,7 +616,7 @@ pairs: 56.00 moy impairs: 26.80
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: frederic boileau</p>
-<p class="date">Created: 2019-12-09 Mon 14:55</p>
+<p class="date">Created: 2019-12-09 Mon 18:31</p>
 </div>
 </body>
 </html>
