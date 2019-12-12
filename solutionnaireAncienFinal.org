@@ -291,7 +291,6 @@ console.log(genereJusquaZero(10));
 
 
 
-** statistiques sur la série générée
 • le nombre de tirages non nuls réalisés,
  - cest simplement la longueur du tableau
 • le nombre d'entiers pairs tirés (la valeur 0 n'est pas comptée) et
@@ -372,5 +371,62 @@ run(range);
   totalPair: 34,
   totalImpair: 19
 }
+undefined
+#+end_example
+** b)
+#+BEGIN_QUOTE
+Écrire une fonction loco qui prend en paramètre un tableau d'entiers et qui
+affiche tous les éléments non (strictement) négatifs de ce tableau de telle
+sorte que le sens de lecture du tableau alterne lorsque qu'une valeur
+(strictement) négative est rencontrée. On commencera à afficher les valeurs de
+la gauche vers la droite, puis au premier entier négatif rencontré, de la droite
+vers la gauche, puis au prochain entier négatif rencontré de la gauche vers la
+droite, etc. Voici des
+#+END_QUOTE
+
+état : normal ou reversed,
+
+#+BEGIN_SRC js
+let loco = function(tableau){
+    let sign = 1;
+    let index = 0;
+    for(i=0; i < tableau.length; i++){
+        if (sign == -1)
+            index = tableau.length - i;
+        else
+            index = i;
+        if (tableau[index] < 0){
+            sign *= -1;
+            continue;
+        }
+        console.log("Index : ",index, "\n");
+
+        console.log(tableau[index]);
+    }
+
+
+};
+loco([4,3,-1,3,-1,2,2,0,5,1]);
+
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+0
+4
+1
+3
+7
+0
+6
+2
+5
+2
+7
+0
+8
+5
+9
+1
 undefined
 #+end_example
